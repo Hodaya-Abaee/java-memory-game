@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\User\Desktop\studies\java eclipse\1\memory card game\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+42589900.index
+3736685970.index
