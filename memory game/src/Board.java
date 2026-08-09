@@ -3,10 +3,10 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Board {
-	private Card[] arr;
+	private Card[] arrCards;
 	
 	public Board(int size) {
-		this.arr=new Card[size];
+		this.arrCards=new Card[size];
 		
 		ImageIcon [] images= new ImageIcon[8];
 		images[0]=changeProportions("pics/pic1.jpg");
@@ -21,8 +21,8 @@ public class Board {
 		int pairs = size /2;
 		int index=0;
 		for(int i=0; i<pairs; i++) {
-			this.arr[index]=new Card(images[i]);
-			this.arr[index+1]=new Card(images[i]);
+			this.arrCards[index]=new Card(images[i]);
+			this.arrCards[index+1]=new Card(images[i]);
 			index+=2;
 		}
 		
@@ -30,28 +30,28 @@ public class Board {
 	}
 	
 	public Card[] returnCards() {
-		return this.arr;
+		return this.arrCards;
 	}
 	
 	public void shuffleCards(int size) {
 		int index, x;
 		Random random = new Random();
 		
-		for(int i=0; i<this.arr.length; i++) {
+		for(int i=0; i<this.arrCards.length; i++) {
 			index = random.nextInt(size);
 			//x = this.arr[i].getValue();
 			//this.arr[i].setValue(this.arr[index].getValue());
 			//this.arr[index].setValue(x);
 			
-			Card temp = arr[i];
-			arr[i] = arr[index];
-			arr[index] = temp;
+			Card temp = arrCards[i];
+			arrCards[i] = arrCards[index];
+			arrCards[index] = temp;
 		}
 	}
 	
 	public boolean isFinished() {
-		for(int i=0; i<this.arr.length; i++) {
-			if(!arr[i].isFound())
+		for(int i=0; i<this.arrCards.length; i++) {
+			if(!arrCards[i].isFound())
 				return false;
 		}
 		return true;
